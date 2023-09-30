@@ -16,7 +16,6 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import dayjs from "dayjs";
 import callAPI from "../../utils/axios.js";
-import DebounceSelect from "../Common/DebounceSelect";
 import Resizer from "react-image-file-resizer";
 import "./styles.css";
 const { Option } = Select;
@@ -24,8 +23,6 @@ const VisitorRequestForm = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
   const [file, setFile] = useState("");
-  const [empName, setEmpName] = useState("");
-  const [empList, setEmpList] = useState(null);
   const [code, setCode] = useState();
   const [startDate, setStartDate] = useState('');
 
@@ -58,7 +55,7 @@ const VisitorRequestForm = () => {
       mobileNumber: values.mobileNumber,
       email: values.email,
       location: values.location,
-      hostname: empName,
+      hostname: values.employeeName,
       hostemail: values.employeeEmail,
     };
 
@@ -66,16 +63,6 @@ const VisitorRequestForm = () => {
       console.log("Inside API Calls");
       let visitorWalkin = await callAPI.post("/api/register", visitorbodyData);
       console.log(visitorWalkin, "visitorWalkin");
-
-      // if (visitorWalkin.status === 201) {
-      //   notification.open({
-      //     message: "Mobile Number already exists!",
-
-      //     description: "",
-
-      //     icon: <CloseCircleOutlined style={{ color: "red" }} />,
-      //   });
-      // } else {
         
         if (visitorWalkin.status === 200) {
           const vmid = visitorWalkin.data.vm_request_id;
@@ -158,74 +145,9 @@ const VisitorRequestForm = () => {
   });
 
   const onUploadChange = ({ file }) => {
-    //console.log(file, file.name, "newfile");
     const image = resizeFile(file).then(res => setFile(file))
-
     console.log(image,'image');
-    //setFile(image)
   };
-  // const handleCam = () => {
-  //   //debugger;
-  //   setCam(!cam)
-  // }
-  // const handleConfirm = (value) => {
-  //   const formDetails = form.getFieldsValue();
-  //   // value=value.slice(23)
-  //   const binaryString = atob(value.split(',')[1]);
-  //   const blob = new Blob([binaryString], { type: 'image/jpeg' });
-  //   console.log(blob,'blob');
-  //   formDetails.idUpload = blob;
-  //   form.setFieldsValue(formDetails)
-  //   setFile(blob);
-  //   // console.log(JSON.stringify(value))
-  //   console.log(value, 'value')
-  // }
-  const handleEmployeeNameChange = (value) => {
-    const information = form.getFieldsValue();
-    const employeeFind = empList.find(item => item.mail === value[0]);
-    setEmpName(employeeFind?.displayName);
-    information.employeeEmail = value[0];
-    form.setFieldsValue(information);
-    console.log(value);
-  };
-
-  const fetchUserList = async (username) => {
-    console.log("fetching user", username);
-    try {
-      let apiresult = await callAPI.get("/api/token");
-      console.log(apiresult.data);
-      const token = apiresult.data;
-      const graphEndpoint = `https://graph.microsoft.com/v1.0/users?$filter=startswith(displayName,'${username}')`;
-      const response = await fetch(graphEndpoint, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data,'data');
-        setEmpList(data?.value)
-        return data?.value.map((item) => ({
-          label: item.displayName,
-          value: item.mail,
-        }));
-      }
-    } catch (error) {
-      // Handle token acquisition error
-      console.log(error);
-    }
-    // return fetch('https://randomuser.me/api/?results=5')
-    // .then((response) => response.json())
-    // .then((body) =>
-    //   body.results.map((user) => ({
-    //     label: `${user.name.first} ${user.name.last}`,
-    //     value: user.login.username,
-    //   })),
-    // );
-  };
-  const filterOption = (input, option) =>
-    (option?.label ?? "").toLowerCase().includes(input.toLowerCase());
 
   const getHandleDate = () => {
     const information = form.getFieldsValue();
@@ -331,18 +253,9 @@ const VisitorRequestForm = () => {
               </div>
               <h6>Indigo Employee Information</h6>
               <div className="form-row">
-                <Form.Item name="employeeName1">
-                  {/* <Input className="form-field-input" placeholder='Whom to meet'></Input> */}
-                  <DebounceSelect
-                    mode="multiple"
-                    //value={value}
-                    placeholder="Select users"
-                    fetchOptions={fetchUserList}
-                    onChange={handleEmployeeNameChange}
-                    style={{
-                      width: "100%",
-                    }}
-                  />
+                <Form.Item name="employeeName">
+                  <Input className="form-field-input" placeholder='Employee Name'></Input>
+           
                   {/* <Select
                   className='form-feild-select'
                   showSearch
@@ -358,7 +271,6 @@ const VisitorRequestForm = () => {
                   <Input
                     className="form-field-input"
                     placeholder="Employee email"
-                    disabled
                   />
                 </Form.Item>
               </div>
