@@ -32,7 +32,145 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.request-form-content{
+  width: 100%;
+}
+
+.form-field-input{
+  border-radius: 8px;
+  border: 1px solid #B0B0B0;
+  background: #FFF;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.form-feild-select.ant-select-in-form-item .ant-select-selector {
+  border-radius: 8px;
+  border: 1px solid #B0B0B0;
+  background: #FFF;
+  padding: 6px 20px;
+  height: auto;
+  width: 100%;
+}
+
+.primary-btn {
+  border-radius: 8px;
+  padding: 20px 25px;
+  color: #fff;
+  background: #001B94;
+  height: auto;
+  text-align: center;
+}
+
+.success-btn{
+  border-radius: 8px;
+  padding: 14px 0px;
+  color: #fff;
+  background: #00941b;
+  height: auto;
+  text-align: center;
+  width: 100%;
+}
+.action-btn .red-btn,
+.action-btn .green-btn{
+  width: 100%;
+}
+
+.action-btn .green-btn.ant-btn-primary{
+  background: #00941b;
+  border-color: #00941b;
+  width: 100%;
+}
+
+.action-btn .green-btn.ant-btn-primary:hover{
+  background: #026514;
+  border-color: #026514;
+}
+
+/* this class is used for disabled button to show grey background */
+.action-btn .green-btn.ant-btn-primary:disabled,
+.action-btn .green-btn.ant-btn-primary.ant-btn-disabled,
+.action-btn .green-btn.ant-btn-primary.ant-btn-disabled:hover
+.action-btn .green-btn.ant-btn-primary:disabled:hover,
+.action-btn .red-btn.ant-btn-primary:disabled,
+.action-btn .red-btn.ant-btn-primary.ant-btn-disabled,
+.action-btn .red-btn.ant-btn-primary.ant-btn-disabled:hover,
+.action-btn .red-btn.ant-btn-primary:disabled:hover{
+  background: rgba(0, 0, 0, 0.04);;
+  border-color: #d9d9d9;
+}
+
+.action-btn .red-btn.ant-btn-primary{
+  background: #D93025;
+  border-color: #D93025;
+  width: 100%;
+}
+
+.action-btn .red-btn.ant-btn-primary:hover{
+  background: #a40808;
+  border-color: #a40808;
+}
+.reject-btn{
+  width: 100%;
+  border-radius: 8px;
+  background: #da0b0b;
+  text-align: center;
+  color:#fff;
+  padding: 14px 0px;
+  height: auto;
+
+}
+
+.secondary-btn {
+  border-radius: 8px;
+  background: #DDD;
+  display: flex;
+  padding: 20px 25px;
+  justify-content: end;
+  align-items: end;
+  gap: 8px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.primary-btn:hover {
+  background: #1CA7EB;
+  color: #fff !important;
+}
+/* .multiple-btn{
+  display: flex;
+  gap: 20px;
+}
+.cam-section{
+  display: flex;
+  gap: 40px;
+} */
+
+
+@media (min-width:1400px) {
+  .form-field-input {
+    /* padding: 20px; */
+  }
+
+  .form-feild-select.ant-select-in-form-item .ant-select-selector {
+    border-radius: 8px;
+    border: 1px solid #B0B0B0;
+    background: #FFF;
+    /* padding: 16px 20px; */
+    height: auto;
+  }
+
+}
+

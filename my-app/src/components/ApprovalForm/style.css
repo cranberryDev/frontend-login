@@ -1,0 +1,297 @@
+.meeting-form-wrapper {
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+}
+
+.approval-form .reject-btn:hover{
+    background-color: #b10909;
+    color:white;
+}
+.approval-form .success-btn:hover{
+    background-color: #1fb10962;
+    color:white;
+}
+
+.upload .ant-input-disabled{
+    background-color: #fff;
+    color: #000;
+}
+
+.meeting-form-wrapper .primary-btn {
+    border-radius: 8px;
+    padding: 15px 25px;
+    color: #fff;
+    background: #001B94;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: var(--project-colours-white, #FFF);
+    
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    /* 111.111% */
+}
+
+.meeting-form-wrapper .secondary-btn {
+    border-radius: 8px;
+    background: #DDD;
+    display: flex;
+    padding: 15px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    color: #06F;
+    
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    /* 111.111% */
+}
+
+
+.meeting-form-banner img {
+    max-width: 100%;
+    margin: 0;
+
+}
+
+.meeting-form-wrapper .padding-sm {
+    padding: 10px;
+
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.uploadProof {
+    display: flex;
+}
+
+.meeting-footer {
+    text-align: end;
+    color: #001B94;
+
+}
+
+.dropdownPurpose {
+    height: 39px;
+}
+.upload {
+    position: relative;
+}
+
+.meeting-form-btns {
+    display: flex;
+}
+
+.form-row .meeting-btn {
+    width: auto;
+    flex: none;
+}
+
+.upload .form-field-input{
+    text-align: start;
+
+}
+.upload .upload-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin: auto;
+    transform: translateY(-50%);
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    width: auto;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.upload .upload-btn .ant-btn{
+    background: #001B94;
+    color: #fff;
+    height: 44px;
+    border-radius: 0;
+}
+
+.upload .upload-btn .ant-btn:hover{
+    color: #fff;
+    background-color: #4096ff;
+}
+
+.meeting-form-input {
+    width: 300px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid #B0B0B0;
+    background: #FFF;
+}
+
+.meeting-form-wrapper .ant-space-compact{
+    display: flex;
+}
+
+.meeting-form-wrapper .ant-upload-list{
+    display: none;
+}  
+
+
+.request-form .request_header{
+    text-align: center;
+}
+
+
+.company-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    background: #001B94;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.company-details .primary-btn{
+    padding: 5px 30px;
+    font-size: 12px;
+    background-color: #FFF;
+    color: #001B94;
+}
+
+.accompany-form-wrapper h6{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dfdbdb;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.accompany-form-wrapper h6 span.delete-icon{
+    border: 1px solid red;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.accompany-form-wrapper h6 span.delete-icon .anticon-delete{
+    color: red;
+    font-size: 20px;
+}
+.accompany-form-wrapper h6 span.delete-icon:hover{
+    background-color: red;
+}
+.accompany-form-wrapper h6 span.delete-icon:hover .anticon-delete{
+    color: #fff;
+    font-size: 20px;
+}
+
+.meeting-footer{
+    border-top: 1px solid #ccc;
+    width: 350px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 10px;
+    text-align: center;
+    text-align: center;
+    color:#001B94;
+    font-size:14px;
+    margin-top: 20px;
+    margin-bottom:0;
+}
+
+
+
+.indigo-image{
+    display: block;
+    min-height: 925px;
+    position: relative;
+    width: 100%;
+    }
+    .indigo-image .background-bg{
+    position:absolute;
+    left: 0;
+    top:10px;
+    transition: all 0.3s ease;
+    animation: mymove 5s;
+    }
+    .indigo-logo{
+    position: absolute;
+    top: 441px;
+    left: 171px;
+    width: 250px;
+    height: auto;
+    animation: mylogo 9s;
+    opacity: 1;
+    transition: all .3s ease;
+    }
+    @keyframes mymove {
+    from {left: -100%; top:100%;}
+    to {left: 0; top:10px;}
+    }
+    
+    @keyframes mylogo {
+    from {width: 0;height: 0; opacity: 0;}
+    to {width: 250px;height: auto; opacity: 1;}
+    }
+
+@media (min-width:567px) {
+    .form-row {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .form-row .ant-form-item {
+        flex: 1;
+        width: 50%;
+    }
+}
+
+@media (min-width:768px) {
+    .meeting-form-wrapper {
+        flex-direction: row;
+    }
+
+    .meeting-form-banner,
+    .request-form {
+        flex: 1;
+        width: 50%;
+    }
+
+    .meeting-form-banner{
+        background: #000099;
+        display: flex;
+        align-items: flex-end;
+        border-radius: 15px;
+        min-height: 450px;
+    }
+    
+}
+
+@media (max-width:768px){
+    .meeting-form-banner{
+        display: none;
+    }
+}

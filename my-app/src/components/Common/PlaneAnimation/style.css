@@ -1,0 +1,130 @@
+.indigo-blue-bar {
+    background-color: #1CA7EB;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+/* .indigo-blue-bar .cloud-img {
+    position: absolute;
+    left: 57%;
+    top: 28%;
+    animation: cloudMove 7s;
+} */
+
+.indigo-blue-bar .background-bg {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    transition: all 0.3s ease;
+    animation: mymove 5s;
+}
+
+.indigo-blue-bar .text-section{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+    transform: translateY(-50%);
+    animation: planeMove 5s;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+
+}
+.indigo-blue-bar .text-section .second-row{
+    display: flex;
+    gap: 25px;
+}
+
+.indigo-blue-bar .text-section img{
+   max-width: 100%;
+}
+
+.large-cloud img {
+    /* width: 100%; */
+    left: 0;
+    top: 0;
+    position: absolute;
+    -webkit-user-select: none; 
+    -moz-user-select: none;   
+    -ms-user-select: none;
+    user-select: none;    
+    pointer-events: none;
+}
+
+.lg-cloud1 {
+    -webkit-animation: animCloud 20s infinite linear;
+    -moz-animation: animCloud 20s infinite linear;
+    animation: animCloud 20s infinite linear
+}
+.lg-cloud2 {
+    -webkit-animation: animCloud 40s infinite linear;
+    -moz-animation: animCloud 40s infinite linear;
+    animation: animCloud 40s infinite linear
+}
+.lg-cloud3 {
+    -webkit-animation: animCloud 60s infinite linear;
+    -moz-animation: animCloud 60s infinite linear;
+    animation: animCloud 60s infinite linear
+}
+.lg-cloud4 {
+    -webkit-animation: animCloud 80s infinite linear;
+    -moz-animation: animCloud 80s infinite linear;
+    animation: animCloud 80s infinite linear
+}
+
+@-webkit-keyframes animCloud {
+    from {
+        -webkit-transform: translateX(100%)
+    }
+    to {
+        -webkit-transform: translateX(-100%)
+    }
+}
+@-moz-keyframes animCloud {
+    from {
+        -moz-transform: translateX(100%)
+    }
+    to {
+        -moz-transform: translateX(-100%)
+    }
+}
+@keyframes animCloud {
+    from {
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        transform: translateX(100%)
+    }
+    to {
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+}
+
+@keyframes planeMove {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 5%;
+    }
+}
+
+@media (max-width:1200px) {
+    .login_container .login_form_footer {
+        position: relative;
+    }
+    .indigo-blue-bar .text-section .second-row img{
+        width: 47%;
+    }
+}
