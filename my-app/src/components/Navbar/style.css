@@ -1,0 +1,30 @@
+.navbar{
+    background-color: #000099;
+    display: flex;
+    align-items: center;
+    padding: 15px 0 14px !important;
+}
+.navbar .me-auto {
+    padding: 5px 20px;
+}
+
+.navbar .logo img{
+    width: 100px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.navbar ul{
+   display: flex;
+   gap: 30px;
+   list-style: none;
+   margin-bottom: 0;
+}
+
+.navbar ul li{
+    display: flex;
+    align-items: center;
+ }
+.navbar .nav-link{
+    padding: 0;
+}
