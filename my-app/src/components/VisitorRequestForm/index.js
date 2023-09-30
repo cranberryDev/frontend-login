@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import bringLogo from "./../../assets/VisitorRequestForm/Logo.svg";
+//import bringLogo from "./../../assets/VisitorRequestForm/Logo.svg";
 import { useNavigate } from "react-router-dom";
 import {
   Button,
@@ -11,7 +11,7 @@ import {
   notification,
 } from "antd";
 import { CheckCircleOutlined, UploadOutlined } from "@ant-design/icons";
-import BlueAnimationPlane from "./../Common/BluePlaneAnimation";
+//import BlueAnimationPlane from "./../Common/BluePlaneAnimation";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import dayjs from "dayjs";
@@ -159,11 +159,11 @@ const VisitorRequestForm = () => {
     <>
       <div data-testid="visitor-component" className="meeting-form-wrapper">
         <div className="meeting-form-banner">
-          <BlueAnimationPlane />
+          {/* <BlueAnimationPlane /> */}
         </div>
         <div data-testid="visitor-form-main" className="request-form">
           <div className="request-form-content">
-            <h4>IndiGo Walk-in Visitor Form</h4>
+            <h4>Visitor Form</h4>
             <Form form={form} name="control-hooks" onFinish={onFinish}>
               <h6>Visitor information</h6>
               <div className="form-row">
@@ -251,7 +251,7 @@ const VisitorRequestForm = () => {
                 />}  */}
                 </Form.Item>
               </div>
-              <h6>Indigo Employee Information</h6>
+              <h6>Employee Information</h6>
               <div className="form-row">
                 <Form.Item name="employeeName">
                   <Input className="form-field-input" placeholder='Employee Name'></Input>
@@ -308,8 +308,8 @@ const VisitorRequestForm = () => {
                     //onChange={onGenderChange}
                     allowClear
                   >
-                    <Option value="GBP Tower A">GBP Tower A</Option>
-                    <Option value="EMAAR 1">EMAAR 1</Option>
+                    <Option value="New Delhi">New Delhi</Option>
+                    <Option value="Bangalore">Bangalore</Option>
                   </Select>
                 </Form.Item>
               </div>
@@ -337,8 +337,8 @@ const VisitorRequestForm = () => {
               </div>
             </Form>
             <div className="meeting-footer">
-              <img src={bringLogo} alt="logo" />
-              <span>©Copyright 2023 IndiGo. All rights reserved.</span>
+              {/* <img src={bringLogo} alt="logo" /> */}
+              <span>©Copyright 2023. All rights reserved.</span>
             </div>
           </div>
         </div>
