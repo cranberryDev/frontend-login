@@ -1,29 +1,16 @@
 import React from "react";
-import Logo from "../../assets/login/Logo.png";
+//import Logo from "../../assets/login/Logo.png";
 import "./loginComponent.css";
 import { Button, Form, Input } from "antd";
 import { useNavigate } from 'react-router-dom';
 import { userList } from './../../helper';
 import { notification } from 'antd';
-import { PlaneLogo } from './svg';
-import AnimationPlan from '../Common/PlaneAnimation';
-// import callAPI from './../../utils/axios.js';
-// import clouds from '../../assets/login/Clouds.svg';
-
-
-
+//import { PlaneLogo } from './svg';
+//import AnimationPlan from '../Common/PlaneAnimation';
 import {
   ExclamationCircleFilled
 } from '@ant-design/icons';
-//import { useMsal } from '@azure/msal-react';
-
-//import { loginRequest, msalConfig } from '../../msalconfig';
-import { useState } from "react";
 import { useEffect } from "react";
-// import axiosAPI from "../../utils/axios";
-// import axios from "axios";
-// import axiosAPI from "../../utils/axios";
-
 
 
 
@@ -89,17 +76,17 @@ const Login = () => {
   return (
     <div  data-testid="login-component" className="login_container">
       <div className="login_image_section">
-        <AnimationPlan />
+        {/* <AnimationPlan /> */}
       </div>
       <div className="login_form">
         <div className="login_form_content">
           <div className="logo">
-            <img src={Logo} className="login_form_logo" alt="Indigo Logo" />
+            {/* <img src={Logo} className="login_form_logo" alt="Indigo Logo" /> */}
           </div>
           <div className="title-section">
 
             { JSON.parse(sessionStorage.getItem("userType")) == "admin" || JSON.parse(sessionStorage.getItem("userType")) == "user" ? <h2 className="title">Nice to see you again</h2> : (
-              <h2 className="title">Welcome to VMS</h2>
+              <h2 className="title">Welcome to Login</h2>
             )}
 
             <div className="subtitle">Enter your login details to continue</div>
@@ -163,10 +150,10 @@ const Login = () => {
             </Form.Item> */}
           </Form>
           <div className="login_form_footer">
-            <PlaneLogo />
+            {/* <PlaneLogo /> */}
             <span className="login_form_footer_copyright">
-              Ⓒ Copyright 2023 IndiGo. All rights reserved.
-              <br/>VMS v2.0
+              Ⓒ Copyright 2023. All rights reserved.
+              
             </span>
           </div>
         </div>
